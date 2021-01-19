@@ -9,7 +9,6 @@ io.configure(function () {
   io.set("transports", ["xhr-polling"]); 
   io.set("polling duration", 10); 
 });
-socket = new io.Socket();
 const io = require('socket.io')(http, {
   cors: {
     origin: '*',
