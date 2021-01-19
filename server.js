@@ -56,15 +56,6 @@ io.on('connection', (socket) => {
  
 
 
-  // socket.on('image', (image) => {
-  //   var imgUrl = image;
-  // });
-  // socket.on('image', (base64) => {
-    
-  //   imgBase64 = base64;
-  //   console.log('reciveng' +imgBase64 )
-  // }); 
-
   socket.on('chat-message', (data) => {
      
     socket.broadcast.emit('chat-message', (data));
@@ -81,13 +72,9 @@ io.on('connection', (socket) => {
   });
 
   
-   
-   
-    
-  
 });
 
-
-http.listen(3000, () => {
-  console.log('listening on *:3000');
+const PORT = process.env.PORT || 3000;
+http.listen(PORT, () => {
+  console.log('listening on port ${PORT}');
 });
